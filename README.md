@@ -27,9 +27,9 @@ MIT © [Tupa, Jeffry](https://github.com/tupaje)
 
 [npm-image]: https://badge.fury.io/js/generator-ui.svg
 [npm-url]: https://npmjs.org/package/generator-ui
-[travis-image]: https://travis-ci.org/tupaje/generator-ui.svg?branch=master
-[travis-url]: https://travis-ci.org/tupaje/generator-ui
-[daviddm-image]: https://david-dm.org/tupaje/generator-ui.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/tupaje/generator-ui
-[coveralls-image]: https://coveralls.io/repos/tupaje/generator-ui/badge.svg
-[coveralls-url]: https://coveralls.io/r/tupaje/generator-ui
+[travis-image]: https://travis-ci.org/jtupa20/generator-ui.svg?branch=master
+[travis-url]: https://travis-ci.org/jtupa20/generator-ui
+[daviddm-image]: https://david-dm.org/jtupa20/generator-ui.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/jtupa20/generator-ui
+[coveralls-image]: https://coveralls.io/repos/jtupa20/generator-ui/badge.svg
+[coveralls-url]: https://coveralls.io/r/jtupa20/generator-ui
