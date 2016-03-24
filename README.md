@@ -1,4 +1,4 @@
-# generator-ui [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage Status](coveralls-image)](coveralls-url)
+# generator-ui [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage Status](coveralls-image)][coveralls-url]
 > Generate UI components
 
 ## Installation
