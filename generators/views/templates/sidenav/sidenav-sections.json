@@ -1,69 +1,19 @@
 {
   "sections": [
     {
-      "name": "BA Info",
+      "name": "<%= titlename %>",
       "type": "toggle",
-      "state": ".baInfo",
+      "state": ".<%= appname %>",
       "icon": "business",
       "pages": [
         {
-          "name": "BA Details",
+          "name": "Details",
           "type": "link",
           "state": "details",
           "icon": "my_location",
           "scroll": "true"
-        },
-        {
-          "name": "Assets",
-          "state": "businessAssociateAssetAssociation",
-          "type": "link",
-          "icon": "navigation",
-          "scroll": "true"
-        },
-        {
-          "name": "Contacts",
-          "state": "businessAssociateContactAssociation",
-          "type": "link",
-          "icon": "people",
-          "scroll": "true"
-        },
-        {
-          "name": "Asset Contacts",
-          "state": "asset-contacts",
-          "type": "link",
-          "icon": "people_outline",
-          "scroll": "true"
         }
       ]
-    },
-    {
-      "name": "Default Contacts",
-      "type": "toggle",
-      "state": ".defaultContacts",
-      "icon": "group_add",
-      "pages": [
-        {
-          "name": "Internal Contacts",
-          "type": "toggle",
-          "state": "businessAssociateContactInternalAssociation",
-          "icon": "people",
-          "scroll": "true"
-        },
-        {
-          "name": "External Contacts",
-          "type": "toggle",
-          "state": "businessAssociateContactExternalAssociation",
-          "icon": "people_outline",
-          "scroll": "true"
-        }
-      ]
-    },
-    {
-      "name": "Address",
-      "type": "toggle",
-      "state": ".address",
-      "icon": "place",
-      "scroll": "false"
     },
     {
       "name": "Comments",

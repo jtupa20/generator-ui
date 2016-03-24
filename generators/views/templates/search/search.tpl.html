@@ -1,0 +1,91 @@
+<ui-query
+  api="ctrl.api.administration.communication.filter"
+  items="ctrl.items"
+  params="params">
+
+  <ui-search>
+    <div ui-column="9">
+      <ui-row>
+        <ui-search-group label="Type" ui-column="4">
+          <select ng-model="params.msgType" ng-options="t for t in ctrl.types">
+            <option></option>
+          </select>
+        </ui-search-group>
+
+        <ui-search-group label="Status" ui-column="4">
+          <select ng-model="params.msgStatus" ng-options="s for s in ctrl.statuses">
+            <option></option>
+          </select>
+        </ui-search-group>
+
+        <ui-search-group label="Subject" ui-column="4">
+          <input ng-model="params.subject">
+        </ui-search-group>
+      </ui-row>
+
+      <ui-row>
+        <ui-search-group label="To" ui-column="2">
+          <input ng-model="params.sentTo">
+        </ui-search-group>
+
+        <ui-search-group label="CC" ui-column="2">
+          <input ng-model="params.sentCC">
+        </ui-search-group>
+
+        <ui-search-group label="From" ui-column="2">
+          <input ng-model="params.sentFrom">
+        </ui-search-group>
+
+        <ui-search-group label="BCC" ui-column="2">
+          <input ng-model="params.sentBCC">
+        </ui-search-group>
+
+        <ui-search-group label="BA" ui-column="4">
+          <input ng-model="params.assetNbr">
+        </ui-search-group>
+      </ui-row>
+    </div>
+
+    <div ui-column="3">
+      <ui-row>
+        <ui-search-group label="Begin Date" ui-column="12">
+          <input ng-model="params.beginDate" type="date">
+        </ui-search-group>
+      </ui-row>
+
+      <ui-row>
+        <ui-search-group label="End Date" ui-column="12">
+          <input ng-model="params.endDate" type="date">
+        </ui-search-group>
+      </ui-row>
+    </div>
+
+    <ui-search-results>
+      <ui-table data="ctrl.items">
+        <ui-table-column name="msgStatus" displayName="Status"></ui-table-column>
+
+        <ui-table-column name="sentDate" displayName="Date(>=)"></ui-table-column>
+
+        <ui-table-column name="subject" displayName="Subject">
+          <div class="ui-grid-cell-contents">
+            <a ui-sref=".detail({server: row.entity.server, msgId: row.entity.msgId})">
+              {{ COL_FIELD }}
+            </a>
+          </div>
+        </ui-table-column>
+
+        <ui-table-column name="phone" displayName="Phone"></ui-table-column>
+
+        <ui-table-column name="sentTo" displayName="To"></ui-table-column>
+
+        <ui-table-column name="sentCc" displayName="CC"></ui-table-column>
+
+        <ui-table-column name="sentBcc" displayName="BCC"></ui-table-column>
+
+        <ui-table-column name="sentFrom" displayName="From"></ui-table-column>
+
+        <ui-table-column name="assetNbr" displayName="BA"></ui-table-column>
+      </ui-table>
+    </ui-search-results>
+  </ui-search>
+</ui-query>
