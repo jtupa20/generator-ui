@@ -1,4 +1,4 @@
-# generator-ui [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# generator-ui [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage Status](coveralls-image)](coveralls-url)
 > Generate UI components
 
 ## Installation
@@ -20,6 +20,8 @@ yo ui
 
 Yeoman has a heart of gold. He&#39;s a person with feelings and opinions, but he&#39;s very easy to work with. If you think he&#39;s too opinionated, he can be easily convinced. Feel free to [learn more about him](http://yeoman.io/).
 
+
+
 ## License
 
 MIT © [Tupa, Jeffry](https://github.com/tupaje)
@@ -31,5 +33,5 @@ MIT © [Tupa, Jeffry](https://github.com/tupaje)
 [travis-url]: https://travis-ci.org/jtupa20/generator-ui
 [daviddm-image]: https://david-dm.org/jtupa20/generator-ui.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/jtupa20/generator-ui
-[coveralls-image]: https://coveralls.io/repos/jtupa20/generator-ui/badge.svg
-[coveralls-url]: https://coveralls.io/r/jtupa20/generator-ui
+[coveralls-image]: https://coveralls.io/repos/github/jtupa20/generator-ui/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/jtupa20/generator-ui?branch=master
