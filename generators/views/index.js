@@ -4,7 +4,6 @@ var chalk = require('chalk');
 var yosay = require('yosay');
 var _ = require('lodash');
 var _s = require('underscore.string');
-var util = require('util');
 
 var Generator = module.exports = yeoman.generators.Base.extend({
   // note: arguments and options should be defined in the constructor.

@@ -9,8 +9,7 @@
     "url": "https://github.com/tupaje"
   },
   "files": [
-    "generators",
-    "util.js"
+    "generators"
   ],
   "main": "generators\\index.js",
   "keywords": [
