@@ -1,0 +1,62 @@
+  <ui-query
+    api="ctrl.api.findAll"
+    items="ctrl.items"
+    params="ctrl.params"
+    allow-empty-params="false">
+    <ui-search>
+
+      <div layout="row" layout-sm="column" class="col-padding">
+        <div flex="">
+          <ui-form-group label="Invoice Identifier">
+            <input ng-model="ctrl.params.invoiceId">
+          </ui-form-group>
+          <ui-form-group label="Contact Name">
+            <input ng-model="ctrl.params.contact">
+          </ui-form-group>
+          <ui-form-group label="Address">
+            <input ng-model="ctrl.params.address">
+          </ui-form-group>
+        </div>
+        <div flex="">
+          <ui-form-group label="Contact Phone">
+            <input ng-model="ctrl.params.phone" ui-input-mask="phoneExtension">
+          </ui-form-group>
+          <ui-form-group label="Current Charges">
+            <input ng-model="ctrl.params.invoiceAmt" type="number" ui-input-mask="9{1,15}.{0,1}9{0,4}"
+                   ui-input-mask-options="{autoUnmask:true,removeMaskOnSubmit:true}">
+          </ui-form-group>
+          <ui-form-group label="Interest">
+            <input ng-model="ctrl.params.interest" type="number" ui-input-mask="9{1,15}.{0,1}9{0,4}"
+                   ui-input-mask-options="{autoUnmask:true,removeMaskOnSubmit:true}">
+          </ui-form-group>
+        </div>
+      </div>
+
+        <ui-search-results>
+          <ui-table
+            grid-name="search"
+            data="ctrl.items"
+            on-row-selection-changed="ctrl.go(row)">
+              <ui-table-column name="invoiceId"
+                               display-name="Invoice Identifier"></ui-table-column>
+
+              <ui-table-column name="contact"
+                               display-name="Contact Name"></ui-table-column>
+
+              <ui-table-column name="address"
+                               display-name="Address"></ui-table-column>
+
+              <ui-table-column name="phone"
+                               display-name="Contact Phone"
+                               width="250"></ui-table-column>
+
+              <ui-table-column name="invoiceAmt"
+                               display-name="Current Charges"></ui-table-column>
+
+              <ui-table-column name="interest"
+                               display-name="Interest"></ui-table-column>
+          </ui-table>
+        </ui-search-results>
+
+    </ui-search>
+  </ui-query>

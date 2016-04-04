@@ -1,11 +1,11 @@
 /*@ngInject*/
-module.exports = function ContentCtrl() {
+module.exports = function ContentCtrl(data) {
   var ctrl = this;
 
   // ========================================
   // interface
   // ========================================
-  ctrl.data = require('./content.json');
+  ctrl.data = data;
   // ========================================
   // implementation
   // ========================================

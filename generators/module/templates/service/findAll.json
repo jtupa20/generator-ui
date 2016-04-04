@@ -1,0 +1,22 @@
+[{
+  "id": 45142,
+  "firstName": "Napoleon",
+  "lastName": "Bonaparte",
+  "userName": "NBonaparte",
+  "type": "Active",
+  "effBeginDt": "01/03/3010"
+},{
+  "id": 94561,
+  "firstName": "William",
+  "lastName": "Shakespeare",
+  "userName": "WShakespeare",
+  "type": "Active",
+  "effBeginDt": "02/02/3010"
+},{
+  "id": 35724,
+  "firstName": "Abraham",
+  "lastName": "Lincoln",
+  "userName": "ALincoln",
+  "type": "Active",
+  "effBeginDt": "03/01/3010"
+}]

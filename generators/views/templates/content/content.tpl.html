@@ -1,10 +1,18 @@
-<ui-card headline="Soda">
-	Insert content here
+<ui-card headline="<%= titlename %>">
+  Insert content here
 </ui-card>
-<ui-card headline="Table">
+<ui-card headline="<%= titlename %> Table">
   <ui-table data="ctrl.data">
-    <ui-table-column name="firstName" display-name="First Name"></ui-table-column>
-    <ui-table-column name="lastName" display-name="Last Name"></ui-table-column>
+    <ui-table-column name="id" display-name="ID"></ui-table-column>
+
     <ui-table-column name="userName" display-name="User Name"></ui-table-column>
+
+    <ui-table-column name="firstName" display-name="First Name"></ui-table-column>
+
+    <ui-table-column name="lastName" display-name="Last Name"></ui-table-column>
+
+    <ui-table-column name="type" display-name="Type"></ui-table-column>
+
+    <ui-table-column name="effBeginDt" display-name="Eff Beg Date"></ui-table-column>
   </ui-table>
 </ui-card>

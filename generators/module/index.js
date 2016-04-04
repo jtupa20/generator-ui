@@ -17,6 +17,20 @@ module.exports = yeoman.generators.Base.extend({
     this.dashname = _s.dasherize(this.appname);
     this.titlename = _s.titleize(_s.humanize(this.appname));
     this.url = this.dashname;
+    // This method adds support for a `--config` flag
+    this.option('config');
+    // And you can then access it later on this way; e.g.
+    this.config = (this.options.config ? 1: 0);
+    this.parentConfig = this.fs.exists('./config.js');
+
+    if (this.fs.exists('./index.js')) {
+      this.parentIndex = this.fs.read('./index.js');
+      var re = new RegExp(/\bname\W+'\b\w+/g).exec(this.parentIndex);
+      if (re) {
+        this.parentAppname = re.toString().match(/'([^']+)/)[1];
+      }
+    }
+
   },
   prompting: function () {
     var done = this.async();
@@ -43,7 +57,47 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: function () {
     if (this.props.dynamicUrl) {
-      this.url = '{' + this.appname + 'Id:int}';
+      if(this.appname === 'detail'){
+        this.url = '{' + this.parentAppname + 'Id:int}';
+      } else {
+        this.url = '{' + this.appname + 'Id:int}';
+      }
+    }
+    if (this.config) {
+      this.fs.copyTpl(
+        this.templatePath('./config.js'),
+        this.destinationPath('./' + this.dashname + '/config.js'),
+        {
+          appname: this.appname
+        }
+      );
+      this.fs.copyTpl(
+        this.templatePath('./services.js'),
+        this.destinationPath('./' + this.dashname + '/services/index.js'),
+        {
+          dashname: this.dashname
+        }
+      );
+      this.fs.copyTpl(
+        this.templatePath('./service'),
+        this.destinationPath('./' + this.dashname + '/services/' + this.dashname),
+        {
+          appname: this.appname,
+          dashname: this.dashname
+        }
+      );
+      this.fs.copyTpl(
+        this.templatePath('./service.js'),
+        this.destinationPath('./' + this.dashname + '/services/' + this.dashname + '/' + this.dashname + '.js'),
+        {
+          appname: this.appname
+        }
+      );
+    } else {
+      this.fs.copy(
+        this.templatePath('./data.json'),
+        this.destinationPath('./' + this.dashname + '/data.json')
+      );
     }
     this.fs.copyTpl(
       this.templatePath('./index.js'),
@@ -52,7 +106,10 @@ module.exports = yeoman.generators.Base.extend({
         appname: this.appname,
         url: this.url,
         props: this.props,
-        titlename: this.titlename
+        titlename: this.titlename,
+        config: this.config,
+        parentAppname: this.parentAppname,
+        parentConfig: this.parentConfig
       }
     );
     this.fs.copy(

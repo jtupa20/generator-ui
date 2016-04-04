@@ -1,91 +1,63 @@
-<ui-query
-  api="ctrl.api.administration.communication.filter"
-  items="ctrl.items"
-  params="params">
+  <ui-query
+    api="ctrl.api.findAll"
+    items="ctrl.items"
+    params="ctrl.params"
+    allow-empty-params="false">
+    <ui-search>
 
-  <ui-search>
-    <div ui-column="9">
-      <ui-row>
-        <ui-search-group label="Type" ui-column="4">
-          <select ng-model="params.msgType" ng-options="t for t in ctrl.types">
-            <option></option>
-          </select>
-        </ui-search-group>
+      <div layout="row" layout-sm="column" class="col-padding">
+        <div flex="">
+          <ui-form-group label="ID">
+            <input ng-model="ctrl.params.id" type="number">
+          </ui-form-group>
 
-        <ui-search-group label="Status" ui-column="4">
-          <select ng-model="params.msgStatus" ng-options="s for s in ctrl.statuses">
-            <option></option>
-          </select>
-        </ui-search-group>
+          <ui-form-group label="User Name">
+            <input ng-model="ctrl.params.userName">
+          </ui-form-group>
+        </div>
+        <div flex="">
 
-        <ui-search-group label="Subject" ui-column="4">
-          <input ng-model="params.subject">
-        </ui-search-group>
-      </ui-row>
+          <ui-form-group label="First Name">
+            <input ng-model="ctrl.params.firstName" ui-wildcard-text="suffix">
+          </ui-form-group>
 
-      <ui-row>
-        <ui-search-group label="To" ui-column="2">
-          <input ng-model="params.sentTo">
-        </ui-search-group>
+          <ui-form-group label="Last Name">
+            <input ng-model="ctrl.params.lastName">
+          </ui-form-group>
 
-        <ui-search-group label="CC" ui-column="2">
-          <input ng-model="params.sentCC">
-        </ui-search-group>
+        </div>
+        <div flex="">
+          <ui-form-group label="Type">
+            <ui-select ng-model="ctrl.params.type" ui-select-code="BATYPE"></ui-select>
+          </ui-form-group>
 
-        <ui-search-group label="From" ui-column="2">
-          <input ng-model="params.sentFrom">
-        </ui-search-group>
+        </div>
+        <div flex="">
+          <ui-date-group label="Eff Beg Date">
+            <md-datepicker ng-model="ctrl.params.effBeginDt" type="date"></md-datepicker>
+          </ui-date-group>
 
-        <ui-search-group label="BCC" ui-column="2">
-          <input ng-model="params.sentBCC">
-        </ui-search-group>
+        </div>
+      </div>
 
-        <ui-search-group label="BA" ui-column="4">
-          <input ng-model="params.assetNbr">
-        </ui-search-group>
-      </ui-row>
-    </div>
+        <ui-search-results>
+          <ui-table
+            grid-name="search"
+            data="ctrl.items"
+            on-row-selection-changed="ctrl.go(row)">
+              <ui-table-column name="id" display-name="ID"></ui-table-column>
 
-    <div ui-column="3">
-      <ui-row>
-        <ui-search-group label="Begin Date" ui-column="12">
-          <input ng-model="params.beginDate" type="date">
-        </ui-search-group>
-      </ui-row>
+              <ui-table-column name="userName" display-name="User Name"></ui-table-column>
 
-      <ui-row>
-        <ui-search-group label="End Date" ui-column="12">
-          <input ng-model="params.endDate" type="date">
-        </ui-search-group>
-      </ui-row>
-    </div>
+              <ui-table-column name="firstName" display-name="First Name"></ui-table-column>
 
-    <ui-search-results>
-      <ui-table data="ctrl.items">
-        <ui-table-column name="msgStatus" displayName="Status"></ui-table-column>
+              <ui-table-column name="lastName" display-name="Last Name"></ui-table-column>
 
-        <ui-table-column name="sentDate" displayName="Date(>=)"></ui-table-column>
+              <ui-table-column name="type" display-name="Type"></ui-table-column>
 
-        <ui-table-column name="subject" displayName="Subject">
-          <div class="ui-grid-cell-contents">
-            <a ui-sref=".detail({server: row.entity.server, msgId: row.entity.msgId})">
-              {{ COL_FIELD }}
-            </a>
-          </div>
-        </ui-table-column>
+              <ui-table-column name="effBeginDt" display-name="Eff Beg Date"></ui-table-column>
+          </ui-table>
+        </ui-search-results>
 
-        <ui-table-column name="phone" displayName="Phone"></ui-table-column>
-
-        <ui-table-column name="sentTo" displayName="To"></ui-table-column>
-
-        <ui-table-column name="sentCc" displayName="CC"></ui-table-column>
-
-        <ui-table-column name="sentBcc" displayName="BCC"></ui-table-column>
-
-        <ui-table-column name="sentFrom" displayName="From"></ui-table-column>
-
-        <ui-table-column name="assetNbr" displayName="BA"></ui-table-column>
-      </ui-table>
-    </ui-search-results>
-  </ui-search>
-</ui-query>
+    </ui-search>
+  </ui-query>

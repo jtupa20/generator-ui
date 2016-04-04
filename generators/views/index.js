@@ -55,13 +55,16 @@ var Generator = module.exports = yeoman.generators.Base.extend({
   },
 
   writing: function () {
+    this.config = (this.fs.exists('./config.js') ? 1: 0);
+
     for (var i = 0, len = this.props.views.length; i < len; i++) {
       this.fs.copyTpl(
         this.templatePath('./' + this.props.views[i]),
         this.destinationPath('./views/' + this.props.views[i]),
         {
           appname: this.appname,
-          titlename: this.titlename
+          titlename: this.titlename,
+          config: this.config
         }
       );
     }
